@@ -28,18 +28,18 @@
         [self.navigationController pushDetailViewController:pdfViewController animated:YES];
  */
 
-@class PDFView;
-@class PDFDocument;
+@class ILPDFView;
+@class ILPDFDocument;
 
-@interface PDFViewController : UIViewController
+@interface ILPDFViewController : UIViewController
 
 /** The PDFDocument that represents the model for the PDFViewController
  */
-@property (nonatomic, strong) PDFDocument *document;
+@property (nonatomic, strong) ILPDFDocument *document;
 
 /** The PDFView that represents the view for the PDFViewController
  */
-@property (nonatomic, strong) PDFView *pdfView;
+@property (nonatomic, strong) ILPDFView *pdfView;
 
 
 /**---------------------------------------------------------------------------------------

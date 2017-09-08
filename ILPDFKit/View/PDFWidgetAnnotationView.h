@@ -23,7 +23,7 @@
 #import <Foundation/Foundation.h>
 
 @class PDFWidgetAnnotationView;
-@class PDFView;
+@class ILPDFView;
 
 /** The PDFWidgetAnnotationViewDelegate responds to user interaction with a PDFWidgetAnnotationView.
  */
@@ -68,7 +68,7 @@
 
 /** The parent view.
  */
-@property (nonatomic, weak) PDFView *parentView;
+@property (nonatomic, weak) ILPDFView *parentView;
 
 /**---------------------------------------------------------------------------------------
  * @name Updating Metrics

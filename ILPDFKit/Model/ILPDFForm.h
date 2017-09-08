@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, PDFFormType) {
 };
 
 @class PDFFormContainer;
-@class PDFPage;
+@class ILPDFPage;
 @class PDFDictionary;
 @class PDFWidgetAnnotationView;
 
@@ -66,7 +66,7 @@ typedef NS_ENUM(NSUInteger, PDFFormType) {
  [webView.scrollView addSubview comboBox];
  [comboBox release];
  */
-@interface PDFForm : NSObject 
+@interface ILPDFForm : NSObject 
 
 /** The value of the form.
  */
@@ -201,7 +201,7 @@ typedef NS_ENUM(NSUInteger, PDFFormType) {
  @param p The parent.
  @return A new PDFForm object. 
  */
-- (instancetype)initWithFieldDictionary:(PDFDictionary *)leaf page:(PDFPage *)pg parent:(PDFFormContainer *)p NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithFieldDictionary:(PDFDictionary *)leaf page:(ILPDFPage *)pg parent:(PDFFormContainer *)p NS_DESIGNATED_INITIALIZER;
 
 /**---------------------------------------------------------------------------------------
  * @name Updating Data
