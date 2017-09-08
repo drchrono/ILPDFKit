@@ -24,14 +24,14 @@
 #import "PDFFormButtonField.h"
 #import "PDF.h"
 
-@interface PDFView(Delegates) <UIScrollViewDelegate,UIGestureRecognizerDelegate,UIWebViewDelegate>
+@interface ILPDFView(Delegates) <UIScrollViewDelegate,UIGestureRecognizerDelegate,UIWebViewDelegate>
 @end
 
-@interface PDFView(Private)
+@interface ILPDFView(Private)
 - (void)fadeInWidgetAnnotations;
 @end
 
-@implementation PDFView {
+@implementation ILPDFView {
     BOOL _canvasLoaded;
 }
 

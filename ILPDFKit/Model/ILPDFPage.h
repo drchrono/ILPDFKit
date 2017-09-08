@@ -34,7 +34,7 @@
 
 @class PDFDictionary;
 
-@interface PDFPage : NSObject
+@interface ILPDFPage : NSObject
 
 /**---------------------------------------------------------------------------------------
  * @name Creating a PDFPage

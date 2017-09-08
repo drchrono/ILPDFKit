@@ -23,12 +23,12 @@
 #import "PDF.h"
 #import "PDFFormContainer.h"
 
-@interface PDFViewController(Private)
+@interface ILPDFViewController(Private)
 - (void)loadPDFView;
 - (CGPoint)margins;
 @end
 
-@implementation PDFViewController
+@implementation ILPDFViewController
 
 #pragma mark - UIViewController
 
@@ -46,7 +46,7 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    for (PDFForm *form in self.document.forms) {
+    for (ILPDFForm *form in self.document.forms) {
         [form removeObservers];
     }
     [_pdfView removeFromSuperview];self.pdfView = nil;
@@ -58,7 +58,7 @@
 - (instancetype)initWithData:(NSData *)data {
     self = [super init];
     if (self != nil) {
-        _document = [[PDFDocument alloc] initWithData:data];
+        _document = [[ILPDFDocument alloc] initWithData:data];
     }
     return self;
 }
@@ -66,7 +66,7 @@
 - (instancetype)initWithResource:(NSString *)name {
     self = [super init];
     if (self != nil) {
-        _document = [[PDFDocument alloc] initWithResource:name];
+        _document = [[ILPDFDocument alloc] initWithResource:name];
     }
     return self;
 }
@@ -74,7 +74,7 @@
 - (instancetype)initWithPath:(NSString *)path {
     self = [super init];
     if(self != nil) {
-        _document = [[PDFDocument alloc] initWithPath:path];
+        _document = [[ILPDFDocument alloc] initWithPath:path];
     }
     return self;
 }
@@ -92,7 +92,7 @@
     id pass = (_document.documentPath ? _document.documentPath:_document.documentData);
     CGPoint margins = [self getMargins];
     NSArray *additionViews = [_document.forms createWidgetAnnotationViewsForSuperviewWithWidth:self.view.bounds.size.width margin:margins.x hMargin:margins.y];
-    _pdfView = [[PDFView alloc] initWithFrame:self.view.bounds dataOrPath:pass additionViews:additionViews];
+    _pdfView = [[ILPDFView alloc] initWithFrame:self.view.bounds dataOrPath:pass additionViews:additionViews];
     [self.view addSubview:_pdfView];
 }
 

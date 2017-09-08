@@ -29,7 +29,7 @@
 @class PDFDictionary;
 @class PDFFormContainer;
 
-@interface PDFDocument : NSObject
+@interface ILPDFDocument : NSObject
 
 /** The PDF file data.
  */
@@ -122,7 +122,7 @@
  @param docToAppend
  @return The PDF data of the result when the passed document is appended to the receiver.
  */
-- (NSData *)mergedDataWithDocument:(PDFDocument *)docToAppend;
+- (NSData *)mergedDataWithDocument:(ILPDFDocument *)docToAppend;
 
 /**
  Converts a PDF page to an image.
