@@ -52,8 +52,11 @@
         for (ILPDFPage *page in _document.pages) {
             pmap[@((NSUInteger)(page.dictionary.dict))] = @(page.pageNumber);
         }
-        for (PDFDictionary *field in _document.catalog[@"AcroForm"][@"Fields"]) {
-            [self enumerateFields:field pageMap:pmap];
+        
+        if (_document.catalog != NULL && _document.catalog[@"AcroForm"] != [NSNull null]) {
+            for (PDFDictionary *field in _document.catalog[@"AcroForm"][@"Fields"]) {
+                [self enumerateFields:field pageMap:pmap];
+            }
         }
     }
     return self;
